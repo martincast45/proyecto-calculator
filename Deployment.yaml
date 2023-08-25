@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calculadora-app
+spec:
+  replicas: 3  # Puedes ajustar esto según tus necesidades
+  selector:
+    matchLabels:
+      app: calculadora-app
+  template:
+    metadata:
+      labels:
+        app: calculadora-app
+    spec:
+      containers:
+        - name: calculadora-app
+          image: TUREGISTRO/TUIMAGEN:etiqueta
+          ports:
+            - containerPort: 3000
